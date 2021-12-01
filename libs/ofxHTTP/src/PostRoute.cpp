@@ -308,7 +308,7 @@ void PostRouteFileHandler::handlePart(const Poco::Net::MessageHeader& header,
                 
                 std::filesystem::path p = uploadFolder;
                 p /= uniqueFilename;
-                p += std::filesystem::extension(originalFilename);
+                p += std::filesystem::path(originalFilename).extension();
                 
 //                ss << _route.settings().getUploadFolder();
 //                ss << "/";
